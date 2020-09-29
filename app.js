@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const axios = require("axios");
+const Twitter = require('./api/helpers/twitter');
 
 app.get("/tweets", (req, res) => {
   const query = req.query.q;
