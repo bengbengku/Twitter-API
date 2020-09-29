@@ -5,6 +5,10 @@ const Twitter = require("./api/helpers/twitter");
 const twitter = new Twitter();
 require('dotenv').config();
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+})
+
 app.get("/tweets", (req, res) => {
   const query = req.query.q;
   const count = req.query.count;
