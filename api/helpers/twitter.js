@@ -9,8 +9,7 @@ class Twitter {
               count: count,
             },
             headers: {
-              Authorization:
-                "Bearer AAAAAAAAAAAAAAAAAAAAAMYgIAEAAAAAF7Jwby68Lnz5rfRAREqJyFwwSFI%3DmUZzirA3tkhfrtW3TyXzYuUmc1RuzNTJr2r831Syp5YvW78qzU",
+              "Authorization": `Bearer ${process.env.TWITTER_API_TOKEN}`
             },
           })
     }
