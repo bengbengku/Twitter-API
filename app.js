@@ -3,11 +3,12 @@ const app = express();
 const port = 3000;
 const Twitter = require("./api/helpers/twitter");
 const twitter = new Twitter();
+require('dotenv').config();
 
 app.get("/tweets", (req, res) => {
   const query = req.query.q;
   const count = req.query.count;
-
+  console.log(process.env.TWITTER_API_TOKEN);
   //twitter dipassing lewat api/helpers/twitter.js
   twitter
     .get(query, count)
