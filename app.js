@@ -1,32 +1,22 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const axios = require("axios");
-const Twitter = require('./api/helpers/twitter');
+const Twitter = require("./api/helpers/twitter");
+const twitter = new Twitter();
 
 app.get("/tweets", (req, res) => {
   const query = req.query.q;
   const count = req.query.count;
 
-  const url = "https://api.twitter.com/1.1/search/tweets.json";
-  axios
-    .get(url, {
-      params: {
-        q: query,
-        count: count,
-      },
-      headers: {
-        Authorization:
-          "Bearer AAAAAAAAAAAAAAAAAAAAAMYgIAEAAAAAF7Jwby68Lnz5rfRAREqJyFwwSFI%3DmUZzirA3tkhfrtW3TyXzYuUmc1RuzNTJr2r831Syp5YvW78qzU",
-      },
-    })
+  //twitter dipassing lewat api/helpers/twitter.js
+  twitter
+    .get(query, count)
     .then((response) => {
       res.status(200).send(response.data);
     })
     .catch((error) => {
-        res.status(400).send(error);
+      res.status(400).send(error);
     });
-
 });
 
 app.listen(port, () => {
