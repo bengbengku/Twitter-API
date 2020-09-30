@@ -13,9 +13,11 @@ app.use((req, res, next) => {
 app.get("/tweets", (req, res) => {
   const query = req.query.q;
   const count = req.query.count;
+  const maxId = req.query.max_id;
+
   //twitter dipassing lewat api/helpers/twitter.js
   twitter
-    .get(query, count)
+    .get(query, count, maxId)
     .then((response) => {
       res.status(200).send(response.data);
     })
