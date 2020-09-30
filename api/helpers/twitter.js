@@ -7,6 +7,7 @@ class Twitter {
             params: {
               q: query,
               count: count,
+              tweet_mode: "extended",
             },
             headers: {
               "Authorization": `Bearer ${process.env.TWITTER_API_TOKEN}`
