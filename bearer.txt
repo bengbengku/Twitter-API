@@ -1,3 +1,0 @@
-curl -u "WEailMdVRsBXcxLPM5vJQ8BDS:oAAuRC0g8c27CCax8PHw2i6MsTZZuugmvtHiVykr2jSAMvFZMO" \--data 'grant_type=client_credentials' \'https://api.twitter.com/oauth2/token'
-
-{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAMYgIAEAAAAAF7Jwby68Lnz5rfRAREqJyFwwSFI%3DmUZzirA3tkhfrtW3TyXzYuUmc1RuzNTJr2r831Syp5YvW78qzU"}
